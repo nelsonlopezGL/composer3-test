@@ -1,0 +1,14 @@
+steps:
+  - name: 'bash'
+    id: A
+    args: ['echo', 'Step A']
+  - name: 'bash'
+    id: B
+    args: ['echo', 'Step B']
+    waitFor:
+      - "A"
+  - name: 'bash'
+    id: C
+    args: ['echo', 'Step C']
+    waitFor:
+      - "A"

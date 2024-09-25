@@ -12,3 +12,11 @@ steps:
     args: ['echo', 'Step C']
     waitFor:
       - "A"
+options:
+  workerPool: 'projects/prj-custom-worker-pp-ee0e/locations/us-central1/workerPools/workerpool-app-us-central1'
+  env:
+    - no_proxy=localhost,www.nexus.ford.com,metadata.google.internal,cloudresourcemanager.googleapis.com,127.0.0.1,19.0.0.0/8,10.0.0.0/8,12.16.0.0/12,ford.com,.ford.com,*.ford.com
+    - https_proxy=http://internet.ford.com:83/
+    - http_proxy=http://internet.ford.com:83/
+logsBucket: 'ford-e248c3c768db393f4a9ba788_cloudbuild/logs'
+timeout: 600s
